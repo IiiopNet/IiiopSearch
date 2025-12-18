@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iiiop</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1 class="pacifico">Iiiop</h1>
+        <div class="search-wrapper">
+            <div class="search-container">
+                <div class="search-engine-dropdown">
+                    <button id="search-engine-button" class="search-engine-button">
+                        <img src="assets/icons/google.svg" alt="Google" id="current-engine-icon" />
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div id="search-engine-menu" class="search-engine-menu">
+                        <div class="search-engine-option" data-engine="google">
+                            <img src="assets/icons/google.svg" alt="Google" />
+                            <span>Google</span>
+                        </div>
+                        <div class="search-engine-option" data-engine="bing">
+                            <img src="assets/icons/bing.svg" alt="Bing" />
+                            <span>Bing</span>
+                        </div>
+                        <div class="search-engine-option" data-engine="duckduckgo">
+                            <img src="assets/icons/duckduckgo.svg" alt="DuckDuckGo" />
+                            <span>DuckDuckGo</span>
+                        </div>
+                        <!-- 暂时隐藏 -->
+                        <div class="search-engine-option add-custom-engine hidden">
+                            <span>+ 添加自定义搜索引擎</span>
+                        </div>
+                    </div>
+                </div>
+                <input type="search" id="search-input" placeholder="搜索" />
+                <img src="assets/icons/search.svg" alt="Search" id="search-button" class="search-button" />
+            </div>
+            <div id="search-history" class="search-history">
+                <div class="search-history-header">
+                    <h3>搜索历史</h3>
+                    <button id="clear-history" class="clear-history">清空</button>
+                </div>
+                <div id="history-items" class="history-items"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="current-year"></span> Iiiop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 暂时隐藏 -->
+    <div id="custom-engine-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>添加自定义搜索引擎</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="custom-engine-name">名称</label>
+                    <input type="text" id="custom-engine-name" placeholder="例如: 百度" />
+                </div>
+                <div class="form-group">
+                    <label for="custom-engine-url">URL (请在搜索词位置使用 %s)</label>
+                    <input type="text" id="custom-engine-url" placeholder="例如: https://www.baidu.com/s?wd=%s" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-custom-engine" class="btn-cancel">取消</button>
+                <button id="save-custom-engine" class="btn-save">保存</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
